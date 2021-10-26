@@ -34,7 +34,7 @@ function preload() {
 function setup() {
 
 
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(displayWidth, displayHeight);
 
   //adding the background image
   bg = createSprite(displayWidth / 2 + 5, displayHeight / 2 - 25, 20, 20)
@@ -113,7 +113,7 @@ function draw() {
 
 
     //release bullets and change the image of shooter to shooting position when space is pressed
-    if (keyWentDown("space")) {
+    if (keyWentDown("space") || touches.length > 0) {
       bullet = createSprite(displayWidth - 1150, player.y - 30, 20, 10)
       bullet.velocityX = 20;
 
